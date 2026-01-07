@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone Gym - Transform Your Body, Transform Your Life</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FitZone</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#classes" class="nav-link">Classes</a></li>
+                <li><a href="#blogs" class="nav-link">Blogs</a></li>
+                <li><a href="#join" class="nav-link">Join Us</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="hero">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920');">
+                <div class="slide-content">
+                    <h1>Transform Your Body</h1>
+                    <p>Join the best gym in town and start your fitness journey today</p>
+                    <a href="#join" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920');">
+                <div class="slide-content">
+                    <h1>Expert Trainers</h1>
+                    <p>Train with certified professionals who care about your success</p>
+                    <a href="#join" class="btn-primary">Join Now</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1920');">
+                <div class="slide-content">
+                    <h1>State-of-the-Art Equipment</h1>
+                    <p>Workout with the latest and best fitness equipment available</p>
+                    <a href="#join" class="btn-primary">Start Today</a>
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About FitZone</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Journey to Fitness Starts Here</h3>
+                    <p>FitZone Gym has been serving the community for over 10 years, providing top-notch fitness facilities and expert guidance to help thousands achieve their fitness goals.</p>
+                    <p>We believe that fitness is not just about physical transformation, but also about mental strength, discipline, and a healthy lifestyle. Our state-of-the-art facility is equipped with the latest equipment and staffed by certified trainers who are passionate about your success.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>5000+</h4>
+                            <p>Active Members</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50+</h4>
+                            <p>Expert Trainers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800" alt="Gym Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💪</div>
+                    <h3>Personal Training</h3>
+                    <p>One-on-one training sessions with certified personal trainers tailored to your fitness goals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏋️</div>
+                    <h3>Weight Training</h3>
+                    <p>Comprehensive weight training programs with modern equipment and expert supervision.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧘</div>
+                    <h3>Yoga Classes</h3>
+                    <p>Relax and rejuvenate with our expert-led yoga sessions for all skill levels.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏃</div>
+                    <h3>Cardio Training</h3>
+                    <p>High-intensity cardio workouts to improve endurance and burn calories effectively.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🥗</div>
+                    <h3>Nutrition Counseling</h3>
+                    <p>Expert nutrition advice and meal plans to complement your fitness journey.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💊</div>
+                    <h3>Supplement Store</h3>
+                    <p>Quality fitness supplements and protein powders available at our in-house store.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="classes">
+        <div class="container">
+            <h2 class="section-title">Our Classes</h2>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="CrossFit">
+                    <div class="class-info">
+                        <h3>CrossFit</h3>
+                        <p><strong>Schedule:</strong> Mon, Wed, Fri - 6:00 AM, 7:00 PM</p>
+                        <p>High-intensity functional fitness workouts</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Zumba">
+                    <div class="class-info">
+                        <h3>Zumba</h3>
+                        <p><strong>Schedule:</strong> Tue, Thu, Sat - 6:00 PM, 7:30 PM</p>
+                        <p>Dance fitness party with Latin rhythms</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600" alt="Pilates">
+                    <div class="class-info">
+                        <h3>Pilates</h3>
+                        <p><strong>Schedule:</strong> Mon, Wed, Fri - 9:00 AM, 6:30 PM</p>
+                        <p>Core strength and flexibility training</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600" alt="Spin Class">
+                    <div class="class-info">
+                        <h3>Spin Class</h3>
+                        <p><strong>Schedule:</strong> Daily - 5:30 AM, 12:00 PM, 7:00 PM</p>
+                        <p>High-energy indoor cycling sessions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blogs">
+        <div class="container">
+            <h2 class="section-title">Meet Our Mentors</h2>
+            <div class="blogs-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600" alt="Trainer">
+                    <div class="blog-content">
+                        <h3>John Smith</h3>
+                        <p class="blog-role">Head Trainer & Nutritionist</p>
+                        <p>15 years of experience in fitness and nutrition. Certified by NASM and IFPA. Specializes in strength training and body transformation.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600" alt="Trainer">
+                    <div class="blog-content">
+                        <h3>Sarah Johnson</h3>
+                        <p class="blog-role">Yoga & Pilates Instructor</p>
+                        <p>RYT-500 certified yoga instructor with 12 years of teaching experience. Expert in Vinyasa, Hatha, and Power Yoga.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Trainer">
+                    <div class="blog-content">
+                        <h3>Mike Davis</h3>
+                        <p class="blog-role">CrossFit & Cardio Specialist</p>
+                        <p>CrossFit Level 2 trainer with 10 years of experience. Helped hundreds achieve their fitness goals through functional training.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600" alt="Trainer">
+                    <div class="blog-content">
+                        <h3>Emily Wilson</h3>
+                        <p class="blog-role">Personal Trainer & Wellness Coach</p>
+                        <p>Certified personal trainer and wellness coach with expertise in weight loss, muscle building, and lifestyle transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="join">
+        <div class="container">
+            <h2 class="section-title">Join FitZone Today</h2>
+            <p class="section-subtitle">Fill out the form below and our team will contact you soon</p>
+            <form id="joinForm" class="join-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="16" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="interests">Fitness Interests</label>
+                    <textarea id="interests" name="interests" rows="3" placeholder="Tell us about your fitness goals..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </form>
+            <div id="joinSuccess" class="success-message" style="display: none;">
+                <p>Thank you! Your application has been submitted. We'll contact you soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone Gym</h3>
+                    <p>Your fitness destination for a healthier lifestyle.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#classes">Classes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>123 Fitness Street</p>
+                    <p>City, State 12345</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Email: info@fitzone.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Mon-Fri: 5:00 AM - 11:00 PM</p>
+                    <p>Sat-Sun: 6:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

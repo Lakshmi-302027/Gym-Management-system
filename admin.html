@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FitZone Gym</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FitZone Admin</div>
+            <ul class="nav-menu">
+                <li><span id="adminName" style="color: var(--primary-color); font-weight: 600;"></span></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><button onclick="logout()" class="btn-secondary" style="margin: 0;">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <div>
+                <button onclick="exportReports()" class="btn-secondary">Export Reports</button>
+                <button onclick="exportLogs()" class="btn-secondary">Export Logs</button>
+            </div>
+        </div>
+
+        <div class="dashboard-tabs">
+            <button class="tab-btn active" onclick="switchTab('members')">Members</button>
+            <button class="tab-btn" onclick="switchTab('plans')">Gym Plans</button>
+            <button class="tab-btn" onclick="switchTab('timings')">Timings</button>
+            <button class="tab-btn" onclick="switchTab('bills')">Bills</button>
+            <button class="tab-btn" onclick="switchTab('notifications')">Notifications</button>
+            <button class="tab-btn" onclick="switchTab('store')">Store</button>
+            <button class="tab-btn" onclick="switchTab('joinRequests')">Join Requests</button>
+            <button class="tab-btn" onclick="switchTab('diet')">Diet Details</button>
+        </div>
+
+        <!-- Members Tab -->
+        <div id="members" class="tab-content active">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Members Management</h2>
+                <button onclick="openAddMemberModal()" class="btn-primary">Add New Member</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="memberSearch" placeholder="Search members by name, email, or phone..." onkeyup="searchMembers()">
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Plan</th>
+                            <th>Timing</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="membersTableBody">
+                        <!-- Members will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Plans Tab -->
+        <div id="plans" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Gym Plans</h2>
+                <button onclick="openAddPlanModal()" class="btn-primary">Add New Plan</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Features</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plansTableBody">
+                        <!-- Plans will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Timings Tab -->
+        <div id="timings" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Gym Timings</h2>
+                <button onclick="openAddTimingModal()" class="btn-primary">Add New Timing</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timing Name</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Days</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timingsTableBody">
+                        <!-- Timings will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bills Tab -->
+        <div id="bills" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Bills & Receipts</h2>
+                <button onclick="openCreateBillModal()" class="btn-primary">Create Bill</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="billSearch" placeholder="Search bills by member name or email..." onkeyup="searchBills()">
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member</th>
+                            <th>Amount</th>
+                            <th>Plan</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billsTableBody">
+                        <!-- Bills will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Notifications Tab -->
+        <div id="notifications" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Notifications</h2>
+                <button onclick="openSendNotificationModal()" class="btn-primary">Send Notification</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Message</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notificationsTableBody">
+                        <!-- Notifications will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Store Tab -->
+        <div id="store" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Supplement Store</h2>
+                <button onclick="openAddProductModal()" class="btn-primary">Add Product</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="productSearch" placeholder="Search products..." onkeyup="searchProducts()">
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="storeTableBody">
+                        <!-- Products will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Join Requests Tab -->
+        <div id="joinRequests" class="tab-content">
+            <h2>Join Requests</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Age</th>
+                            <th>Interests</th>
+                            <th>Submitted</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="joinRequestsTableBody">
+                        <!-- Join requests will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Diet Details Tab -->
+        <div id="diet" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Diet Details & Plans</h2>
+                <button onclick="openAddDietModal()" class="btn-primary">Add Diet Plan</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Diet Name</th>
+                            <th>Goal</th>
+                            <th>Duration</th>
+                            <th>Calories</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dietTableBody">
+                        <!-- Diet plans will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals will be loaded dynamically by admin.js -->
+    <div id="modalContainer"></div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
+
