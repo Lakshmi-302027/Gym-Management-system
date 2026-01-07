@@ -119,4 +119,4 @@ Gym/
    - Add products to cart
 
 ### Live demo
-**Live at: ** https://frabjous-kataifi-109108.netlify.app/
+Live at: https://frabjous-kataifi-109108.netlify.app/
