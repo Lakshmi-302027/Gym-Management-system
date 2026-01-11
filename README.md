@@ -117,3 +117,6 @@ Gym/
 5. **Shop Store**
    - Browse supplement store
    - Add products to cart
+
+### Live demo
+Live at: https://frabjous-kataifi-109108.netlify.app/
