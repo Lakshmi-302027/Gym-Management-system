@@ -107,19 +107,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scrolling
     navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                    logger.log('Navigation Click', { target: targetId });
-                }
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                logger.log('Navigation Click', { target: targetId });
+                
+                // Auto-hide mobile nav menu after link click
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active'); // Optional: Reset hamburger icon state if styled
             }
-        });
+        }
     });
+});
+
+
 
     // Join form submission
     const joinForm = document.getElementById('joinForm');
